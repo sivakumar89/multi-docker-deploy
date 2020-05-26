@@ -16,7 +16,7 @@ after_success:
   - docker build -t siva/multi-worker ./worker
 
   # DockerLogin
-  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker login -u "$DOCKER_ID" -p "$DOCKER_PWD"
 
   # push to docker hub
   - docker push siva/multi-client
